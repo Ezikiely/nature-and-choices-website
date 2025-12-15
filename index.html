@@ -24,15 +24,26 @@
             font-size: 2.5em;
             margin-bottom: 10px;
         }
-        .hero-image {
-            width: 100%;
-            max-width: 800px;
-            height: 300px;
-            background: url('https://via.placeholder.com/800x300/4caf50/ffffff?text=Nature+Scene') no-repeat center center;
-            background-size: cover;
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        .clickable-text {
+            font-size: 1.5em;
+            color: #388e3c;
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 20px 0;
+            transition: color 0.3s ease;
+        }
+        .clickable-text:hover {
+            color: #4caf50;  /* Darker green on hover for emphasis */
+        }
+        .arrow {
+            font-size: 3em;
+            color: #388e3c;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .arrow:hover {
+            transform: translateY(5px);
         }
         p {
             max-width: 800px;
@@ -68,10 +79,16 @@
             background-color: #4caf50;
         }
     </style>
+    <script>
+        function scrollToBooklet() {
+            document.querySelector('iframe').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </head>
 <body>
     <h1>Nature and Choices</h1>
-    <div class="hero-image"></div>
+    <div class="clickable-text" onclick="scrollToBooklet()">Ready to learn? Click here!</div>  <!-- Clickable text that scrolls to the booklet -->
+    <div class="arrow" onclick="scrollToBooklet()">↓</div>  <!-- Optional arrow for additional guidance -->
     <p>Discover the delicate balance between nature's wonders and the choices we make. This interactive booklet explores themes of environmental stewardship, personal decisions, and the paths that shape our world. Flip through the pages to uncover insights and inspiration.</p>
     
     <iframe src="https://online.fliphtml5.com/pvdgc/frdu/" allowfullscreen></iframe>
